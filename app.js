@@ -3,14 +3,15 @@ const app = express();
 const hbs = require("express-handlebars");
 const path = require("path");
 const session = require('express-session')
-const cookieParser = require('cookie-parser')
+// const cookieParser = require('cookie-parser')
+const mongoose = require('mongoose')
 
 const PORT = process.env.PORT || 3002;
 
 
 const homeRouter = require("./routes/homeRouter");
 const loginRouter = require("./routes/loginRouter");
-app.use(cookieParser())
+// app.use(cookieParser())
 app.use(session({
   secret: 'some secret key',
   resave: false,
