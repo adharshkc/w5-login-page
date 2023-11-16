@@ -1,0 +1,46 @@
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">Nike Store</a>
+  <a href="/logout">
+    <button
+      class="btn btn-outline-success my-2 my-sm-0"
+      type="submit"
+    >Logout</button>
+  </a>
+</nav>
+
+<section>
+  <div class="container">
+    <div class="row">
+      {{#each products}}
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4 mt-2">
+          <div class="card">
+            <img
+              class="card-img"
+              style="hieght: 100rem"
+              src="{{imageURL}}"
+              alt="Vans"
+            />
+            <div class="card-body">
+              <h4 class="card-title">{{name}}</h4>
+              <h6 class="card-subtitle mb-2 text-muted">{{category}}</h6>
+              <h5 class="card-text">
+                {{brand}}
+              </h5>
+              <div
+                class="buy d-flex justify-content-between align-items-center"
+              >
+                <div class="price text-success"><h5
+                    class="mt-4"
+                  >₹{{price}}</h5></div>
+                <a href="#" class="btn btn-danger mt-3"><i
+                    class="fas fa-shopping-cart"
+                  ></i>
+                  Add to Cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
