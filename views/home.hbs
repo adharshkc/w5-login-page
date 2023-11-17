@@ -1,5 +1,7 @@
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand">Nike Store</a>
+  <a class="navbar-brand"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50">
+<path fill-rule="evenodd" d="M 6.40625 16.800781 C 3.152344 20.621094 0 25.234375 0 28.902344 C 0 31.019531 1.78125 33.996094 6.132813 33.996094 C 8.484375 33.996094 10.820313 33.050781 12.648438 32.320313 C 15.730469 31.085938 49.789063 16.296875 49.789063 16.296875 C 50.117188 16.132813 50.058594 15.925781 49.644531 16.027344 C 49.480469 16.070313 12.566406 26.074219 12.566406 26.074219 C 11.855469 26.273438 11.128906 26.382813 10.421875 26.382813 C 7.230469 26.382813 5.078125 24.851563 5.078125 21.503906 C 5.078125 20.207031 5.484375 18.640625 6.40625 16.800781 Z"></path>
+</svg></a>
   <a href="/logout">
     <button
       class="btn btn-outline-success my-2 my-sm-0"
@@ -17,12 +19,12 @@
             <img
               class="card-img"
               style="hieght: 100rem"
-              src="{{imageURL}}"
+              src="{{this.imageURL}}"
               alt="Vans"
             />
             <div class="card-body">
-              <h4 class="card-title">{{name}}</h4>
-              <h6 class="card-subtitle mb-2 text-muted">{{category}}</h6>
+              <h4 class="card-title">{{this.name}}</h4>
+              <h6 class="card-subtitle mb-2 text-muted">{{this.category}}</h6>
               <h5 class="card-text">
                 {{brand}}
               </h5>
@@ -31,7 +33,7 @@
               >
                 <div class="price text-success"><h5
                     class="mt-4"
-                  >₹{{price}}</h5></div>
+                  >₹{{this.price}}</h5></div>
                 <a href="#" class="btn btn-danger mt-3"><i
                     class="fas fa-shopping-cart"
                   ></i>
