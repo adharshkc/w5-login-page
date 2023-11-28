@@ -2,6 +2,7 @@ const express = require("express");
 const data = require("../data/shoes.json");
 // const authController = require("../controllers/userController");
 const User = require("../models/userSchema");
+const userAuth = require("../middlewares/authentication");
 
 const router = express.Router();
 
@@ -36,28 +37,13 @@ router.get("/register", (req, res) => {
 // });
 
 /*post login*/
-router.post("/login", async (req, res) => {
+router.post("/login", userAuth, async (req, res) => {
   try {
-    const email = req.body.email;
-    const password = req.body.password;
-
-    console.log(password);
-    const user = await User.findOne({ email: email });
-    if (user) {
-      const result = password == user.password;
-      if (result) {
-        req.session.user = req.body;
-        req.session.loggedIn = true;
-        res.redirect("/home");
-        console.log("user authenticated");
-      } else {
-        console.log("invalid password");
-        res.render("login", { errorMessage: "invalid password" });
-      }
-    } else {
-      res.render("login", { errorMessage: "user not found" });
-      console.log("user not found");
-    }
+    const validatedUser = req.user;
+    req.session.user = validatedUser;
+    req.session.loggedIn = true;
+    res.redirect("/home");
+    console.log("user authenticated and logged in...");
   } catch (err) {
     console.log(err);
   }
@@ -71,10 +57,9 @@ router.post("/register", async (req, res) => {
     const password = req.body.password;
     const dbEmail = await User.findOne({ email: email });
     if (dbEmail === null) {
-      
       console.log("creating user");
       const user = await User.create({ email: email, password: password });
-      user.save()
+      user.save();
       if (user) {
         req.session.user = req.body;
         req.session.loggedIn = true;
@@ -83,8 +68,10 @@ router.post("/register", async (req, res) => {
         console.log(user);
       }
     } else {
-      res.render("register", { errorMessage: "user already exist, kindly login" });
-  }
+      res.render("register", {
+        errorMessage: "user already exist, kindly login",
+      });
+    }
   } catch (err) {
     console.log(err);
   }
