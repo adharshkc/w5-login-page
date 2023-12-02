@@ -10,7 +10,8 @@ const mongoose = require("mongoose");
 const PORT = process.env.PORT || 3002;
 
 const homeRouter = require("./routes/homeRouter");
-const authRouter = require("./routes/authRouter");
+const userRouter = require("./routes/userRouter");
+const adminRouter = require("./routes/adminRouter");
 // app.use(cookieParser())
 app.use(
   session({
@@ -36,8 +37,9 @@ app.engine(
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 app.use(express.static(path.join(__dirname, "public")));
-app.use("/", authRouter);
+app.use("/", userRouter);
 app.use("/", homeRouter);
+app.use("/", adminRouter)
 
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);

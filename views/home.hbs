@@ -1,14 +1,82 @@
-<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50">
-<path fill-rule="evenodd" d="M 6.40625 16.800781 C 3.152344 20.621094 0 25.234375 0 28.902344 C 0 31.019531 1.78125 33.996094 6.132813 33.996094 C 8.484375 33.996094 10.820313 33.050781 12.648438 32.320313 C 15.730469 31.085938 49.789063 16.296875 49.789063 16.296875 C 50.117188 16.132813 50.058594 15.925781 49.644531 16.027344 C 49.480469 16.070313 12.566406 26.074219 12.566406 26.074219 C 11.855469 26.273438 11.128906 26.382813 10.421875 26.382813 C 7.230469 26.382813 5.078125 24.851563 5.078125 21.503906 C 5.078125 20.207031 5.484375 18.640625 6.40625 16.800781 Z"></path>
-</svg></a>
-  <a href="/logout">
+{{!-- <nav class="navbar navbar-light bg-light d-flex">
+  <a class="navbar-brand"><svg
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      width="50"
+      height="50"
+      viewBox="0 0 50 50"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M 6.40625 16.800781 C 3.152344 20.621094 0 25.234375 0 28.902344 C 0 31.019531 1.78125 33.996094 6.132813 33.996094 C 8.484375 33.996094 10.820313 33.050781 12.648438 32.320313 C 15.730469 31.085938 49.789063 16.296875 49.789063 16.296875 C 50.117188 16.132813 50.058594 15.925781 49.644531 16.027344 C 49.480469 16.070313 12.566406 26.074219 12.566406 26.074219 C 11.855469 26.273438 11.128906 26.382813 10.421875 26.382813 C 7.230469 26.382813 5.078125 24.851563 5.078125 21.503906 C 5.078125 20.207031 5.484375 18.640625 6.40625 16.800781 Z"
+      ></path>
+    </svg></a>
+ <ul class="navbar-nav ms-auto mr-2">
+        {{! <li class="nav-item pr-2">
+          <a class="nav-link bg-success text-light rounded px-3 py-2" href="javascript:void(0)">AddUser</a>
+        </li> }}
+        <a href="">
+          <button type="button" class="btn btn-success m-2">Add User</button></a>
+        <a href="/logout">
+          <button type="button" class="btn btn-danger m-2">Logout</button></a>
+
+      </ul>
+</nav> --}}
+<nav class="navbar navbar-expand-sm navbar-dark bg-light">
+  <div class="container-fluid">
+     <a class="navbar-brand"><svg
+      xmlns="http://www.w3.org/2000/svg"
+      x="0px"
+      y="0px"
+      width="50"
+      height="50"
+      viewBox="0 0 50 50"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M 6.40625 16.800781 C 3.152344 20.621094 0 25.234375 0 28.902344 C 0 31.019531 1.78125 33.996094 6.132813 33.996094 C 8.484375 33.996094 10.820313 33.050781 12.648438 32.320313 C 15.730469 31.085938 49.789063 16.296875 49.789063 16.296875 C 50.117188 16.132813 50.058594 15.925781 49.644531 16.027344 C 49.480469 16.070313 12.566406 26.074219 12.566406 26.074219 C 11.855469 26.273438 11.128906 26.382813 10.421875 26.382813 C 7.230469 26.382813 5.078125 24.851563 5.078125 21.503906 C 5.078125 20.207031 5.484375 18.640625 6.40625 16.800781 Z"
+      ></path>
+    </svg></a>
     <button
-      class="btn btn-outline-success my-2 my-sm-0"
-      type="submit"
-    >Logout</button>
-  </a>
+      class="navbar-toggler bg-dark"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mynavbar"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <form class="d-flex ms-auto">
+        <div class="input-group pt-2">
+          <input
+            type="search"
+            class="form-control rounded"
+            placeholder="Search"
+            aria-label="Search"
+            aria-describedby="search-addon"
+          />
+          <button
+            type="button"
+            class="btn btn-outline-primary"
+            data-mdb-ripple-init
+          ><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+      </form>
+      <ul class="navbar-nav ms-auto mr-2">
+        {{! <li class="nav-item pr-2">
+          <a class="nav-link bg-success text-light rounded px-3 py-2" href="javascript:void(0)">AddUser</a>
+        </li> }}
+        <a href="">
+          <button type="button" class="btn btn-success m-2">Cart</button></a>
+        <a href="/logout">
+          <button type="button" class="btn btn-danger m-2">Logout</button></a>
+
+      </ul>
+    </div>
+  </div>
 </nav>
+
 
 <section>
   <div class="container">

@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <h2 class="text-center">Update User</h2>
+    
+  <form class="row g-3 mt-1" action="/admin/edit-user/{{data._id}}" method="post">
+    <div class="col-md-6">
+      <label for="inputName" class="form-label">Full Name</label>
+      <input type="text" name="fullName" value="{{data.fullName}}" class="form-control" id="inputName">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPhone" class="form-label">Phone</label>
+      <input type="text" name="phone" class="form-control" value="{{data.phone}}" id="inputPhone">
+    </div>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" name="email" class="form-control" value="{{data.email}}" id="inputEmail4">
+    </div>
+    {{!-- <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Password</label>
+      <input type="password" class="form-control" id="inputPassword4">
+    </div> --}}
+    <div class="col-md-6">
+      <label for="inputGender" class="form-label">Gender</label>
+      <input type="text" name="gender" class="form-control" value="{{data.gender}}" id="inputGender">
+    </div>
+
+ 
+   
+    {{!-- <div class="col-12">
+    </div> --}}
+    <div class="col-12">
+     <a href="/admin"> <button class="btn border">Cancel</button></a>
+      <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+  </form>
+
+  <hr>
+
+  
+</div>
