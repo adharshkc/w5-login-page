@@ -6,8 +6,10 @@ const session = require("express-session");
 const bodyParser = require("body-parser");
 // const cookieParser = require('cookie-parser')
 const mongoose = require("mongoose");
+// require('dotenv').config()
 
 const PORT = process.env.PORT || 3002;
+
 
 const homeRouter = require("./routes/homeRouter");
 const userRouter = require("./routes/userRouter");

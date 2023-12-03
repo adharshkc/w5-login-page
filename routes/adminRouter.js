@@ -99,7 +99,7 @@ router.post("/admin/search/", async function(req, res){
   const word = req.body.keyword
   const users = await User.find({ fullName: { $regex: `^${word}`, $options: 'i' } }).lean();
   res.render('admin', {user: users})
-  console.log(users)
+  // console.log(users)
 })
 router.get("/admin/search", function(req,res){
   res.redirect("/admin")
